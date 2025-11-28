@@ -84,20 +84,12 @@ async def get_community_clusters(
 
 
 def label_propagation(projection: dict[str, list[Neighbor]]) -> list[list[str]]:
-    """
-    Implement the label propagation community detection algorithm with oscillation prevention.
-    
-    Algorithm:
-    1. Start with each node being assigned its own community
-    2. Each node will take on the community of the plurality of its neighbors
-    3. Ties are broken by going to the largest community
-    4. Continue until no communities change during propagation
-    
-    Oscillation prevention:
-    - Uses asynchronous updates (randomized node order)
-    - Maximum iteration limit to prevent infinite loops
-    - Early stopping if oscillation is detected
-    """
+    # Implement the label propagation community detection algorithm.
+    # 1. Start with each node being assigned its own community
+    # 2. Each node will take on the community of the plurality of its neighbors
+    # 3. Ties are broken by going to the largest community
+    # 4. Continue until no communities change during propagation
+
     import random
     
     MAX_ITERATIONS = 100
